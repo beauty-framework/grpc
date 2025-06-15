@@ -75,7 +75,7 @@ docker-compose exec -u www-data app protoc \
 
 ```yaml
 grpc:
-  listen: tcp://127.0.0.1:9001
+  listen: tcp://0.0.0.0:9001
   pool:
     command: "php workers/grpc-worker.php"
   proto:
