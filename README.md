@@ -104,8 +104,10 @@ namespace App\Controllers\GRPC;
 use GRPC\Greeter\GreeterInterface;
 use GRPC\Greeter\HelloRequest;
 use GRPC\Greeter\HelloReply;
+use Beauty\GRPC\GrpcService;
 use Spiral\RoadRunner\GRPC\ContextInterface;
 
+#[GrpcService(GreeterInterface::class)]
 class Greeter implements GreeterInterface
 {
     public function SayHello(ContextInterface $ctx, HelloRequest $in): HelloReply
