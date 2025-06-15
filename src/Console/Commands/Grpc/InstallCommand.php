@@ -60,7 +60,7 @@ class InstallCommand extends AbstractCommand
         $psr4 = &$composer['autoload']['psr-4'];
 
         if (!isset($psr4['GRPC\\'])) {
-            $psr4['GRPC\\'] = 'generated/';
+            $psr4['GRPC\\'] = 'generated/GRPC';
             file_put_contents(
                 $base . '/composer.json',
                 json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL
