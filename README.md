@@ -75,7 +75,7 @@ docker-compose exec -u www-data app protoc \
 
 ```yaml
 grpc:
-  listen: tcp://0.0.0.0:9001
+  listen: tcp://0.0.0.0:51015
   pool:
     command: "php workers/grpc-worker.php"
   proto:
@@ -85,6 +85,14 @@ grpc:
 ---
 
 ### 3. Start the server
+
+Add new `ports` in `docker-compose.yml` in `app` service:
+```yaml
+services:
+  app:
+    ports:
+      - "51015:51015"
+```
 
 ```bash
 make stop && make up
